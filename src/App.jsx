@@ -22,7 +22,7 @@ function App() {
       .from(".loadingBun",{rotate:-360,duration:2,ease:"power1.in"})
       .to(".loadingBundle",{rotate:360,repeat:1,duration:4,ease:"none"})
       .to(".loadingText span",{y:200,stagger:0.1,opacity:0,delay:0.5,duration:0.5,ease:"back.in(4)"},"<")
-      .to(".loadingbundleCover",{x:-153,duration:4,ease:"power1.inOut"},5)
+      .to(".loadingbundleCover",{x:"-7.969vw",duration:4,ease:"power1.inOut"},5)
       .to(".centerCircle",{scale:3000,duration:3,ease:"back.in(1)"},8)
       .to(".loadingCircle1",{scale:12,y:-200,duration:6,ease:"none"},4)
       .to(".loadingCircle2",{scale:11,y:-200,duration:6,ease:"none"},4.2)
@@ -79,7 +79,7 @@ function App() {
 
 
       <div className="content">
-        dfugvne
+        <p className='fs-1'>Content Here</p>
       </div>
     </>
   )
