@@ -31,7 +31,7 @@ function App() {
       .to(".loadingCircle5",{scale:8,y:-200,duration:6,ease:"none"},4.8)
       .to(".loadingCircle6",{scale:7,y:-200,duration:6,ease:"none"},5)
       .set(".landingPage",{display:"none"})
-      .ser(".content",{display:"block"})
+      .set(".content",{display:"block"})
   })
 
   
