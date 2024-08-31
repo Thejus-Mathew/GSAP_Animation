@@ -30,7 +30,7 @@ function App() {
       .to(".loadingCircle4",{scale:9,y:-200,duration:6,ease:"none"},4.6)
       .to(".loadingCircle5",{scale:8,y:-200,duration:6,ease:"none"},4.8)
       .to(".loadingCircle6",{scale:7,y:-200,duration:6,ease:"none"},5)
-      .to(".loadingBun",{opacity:0,duration:0.01})
+      .to(".loadingBun",{opacity:0,duration:0.01},10.5)
       .set(".landingPage",{display:"none"})
       .set(".content",{display:"block"})
   })
