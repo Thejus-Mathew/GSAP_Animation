@@ -71,9 +71,109 @@ body{
   background-color: black;
 }
 
+
+
+
+
+
+
+
 .content{
   display: none;
-  height: 100vh;
   background-color: black;
   color: white;
+}
+.homePage{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.homePage .gridLines{
+  position: absolute;
+  z-index: 0;
+}
+.homePage .navbar .navbar2{
+  gap: 3vw;
+}
+.homePage .navbar h2{
+  font-size: 1.2vw;
+  cursor: pointer;
+}
+.homePage .navbar span{
+  font-size: 1vw;
+  color: rgb(163, 163, 163);
+  cursor: pointer;
+}
+.homePage .banner1{
+  position: absolute;
+  /* border: 1px red solid; */
+  top: 24%;
+  left: 11%;
+  height: 60%;
+  width: 34%;
+}
+.homePage .span1{
+  font-size: 1vw;
+}
+.homePage .span2{
+  font-size: 4vw;
+  font-weight: bold;
+}
+.homePage .span3{
+  font-size: 0.9vw;
+  color: rgb(168, 168, 168);
+  margin:2vw 0vw;
+}
+.homePage button{
+  color: black;
+  margin-top: 0.2vw;
+  background-color: #CBFC01;
+  padding: 1vw 2vw;
+  font-size: 1vw;
+  font-weight: bold;
+}
+.homePage .banner2{
+  position: absolute;
+  right: 0;
+  top: 24%;
+  height: 60%;
+  /* border: 1px blue solid; */
+  width: 50%;
+  overflow: hidden;
+}
+.homePage .banner2 .ellipse{
+  position: absolute;
+  right: -8vw;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: #CBFC01;
+  border-radius: 50%;
+}
+
+.homePage .cardCover{
+  position: absolute;
+  right: 0;
+  top: 1vw;
+}
+.homePage .cardCover1{
+  top: 8vw;
+}
+.homePage .cardCover2{
+  top: 1vw;
+}
+.homePage .cardd{
+  position: relative;
+}
+.homePage .demoCard{
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  /* border: 1px red solid; */
+  top: 17vw;
+  left: 15vw;
+  border-radius: 8px;
+  backdrop-filter: blur(3px);
+}
+.homePage .cardd path{
+  cursor:text;
 }
