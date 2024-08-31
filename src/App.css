@@ -63,14 +63,17 @@
   height: 1px;
   width: 1px;
   border-radius: 50%;
-  background-color: rgb(255, 255, 255);
+  background-color: black;
 }
 
 
-
+body{
+  background-color: black;
+}
 
 .content{
   display: none;
   height: 100vh;
-  background-color: white;
+  background-color: black;
+  color: white;
 }
