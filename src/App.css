@@ -156,10 +156,10 @@ body{
   top: 1vw;
 }
 .homePage .cardCover1{
-  top: 8vw;
+  top: 150px;
 }
 .homePage .cardCover2{
-  top: 1vw;
+  top: 25px;
 }
 .homePage .cardd{
   position: relative;
@@ -169,11 +169,45 @@ body{
   height: 100px;
   width: 100px;
   /* border: 1px red solid; */
-  top: 17vw;
-  left: 15vw;
+  top: 327px;
+  right: 318px;
   border-radius: 8px;
   backdrop-filter: blur(3px);
 }
 .homePage .cardd path{
   cursor:text;
+}
+
+@media screen and (max-width:500px) {
+  .homePage .banner2{
+    top: 30%;
+    height: 82%;
+    width: 200%;
+    transform-origin: 100% 50%;
+    scale: 0.4;
+  }
+  .homePage .banner1{
+    top: 15%;
+    height: 38%;
+    width: 75%;
+  }
+  .homePage .span1{
+    font-size: 3vw;
+  }
+  .homePage .span2{
+    font-size: 10vw;
+  }
+  .homePage .span3{
+    font-size: 2vw;
+    margin:4vw 0vw;
+  }
+  .homePage button{
+    font-size: 3vw;
+  }
+  .homePage .navbar h2{
+    font-size: 2.5vw;
+  }
+  .homePage .navbar span{
+    font-size: 2vw;
+  }
 }
