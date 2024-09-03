@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+
+
+/* loading Page */
+
 .landingPage{
   background-color: rgb(238, 235, 231);
   height: 100vh;
@@ -82,18 +86,33 @@ body{
   display: none;
   background-color: black;
   color: white;
+  width: 99vw;
+  overflow: hidden;
+  /* border: 1px red solid; */
+  padding: 0;
 }
+
+
+
+/* homepage */
 .homePage{
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  /* border: red 1px solid; */
+  padding: 0;
+  margin: 0;
 }
 .homePage .gridLines{
   position: absolute;
   z-index: 0;
+  /* border: 1px blue solid; */
 }
 .homePage .navbar .navbar2{
   gap: 3vw;
+}
+.homePage .navbar{
+  /* border: yellow 1px solid; */
 }
 .homePage .navbar h2{
   font-size: 1.2vw;
@@ -178,6 +197,113 @@ body{
   cursor:text;
 }
 
+
+
+/* Advertisement */
+
+  .ads{
+    background-color: #CBFC01;
+    height: 10vw;
+    width: 100%;
+    overflow: hidden;
+  }
+  .ad{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    /* border: 1px red solid; */
+  }
+
+
+
+
+
+
+
+/*maps  */
+
+.maps .span1{
+  font-size: 1vw;
+  font-weight: bold;
+}
+.maps .span2{
+  font-size: 3vw;
+  font-weight: bolder;
+}
+.maps .span3{
+  font-size: 0.9vw;
+  color: rgb(192, 192, 192);
+}
+.maps .span4{
+  font-size: 2.5vw;
+  font-weight: bolder;
+}
+.maps .span5{
+  font-size: 0.9vw;
+}
+.maps path:hover{
+  fill: black;
+  opacity: 1;
+}
+
+
+
+/* services */
+.services .span1{
+  font-size: 1vw;
+  font-weight: bold;
+}
+.services .span2{
+  font-size: 3vw;
+  font-weight: bolder;
+}
+.services .span3{
+  font-size: 0.9vw;
+  color: rgb(192, 192, 192);
+}
+.services button{
+  color: black;
+  margin-top: 0.2vw;
+  background-color: #CBFC01;
+  padding: 1vw 2vw;
+  font-size: 1vw;
+  font-weight: bold;
+}
+.services .circle{
+  width: 70%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: #CBFC01;
+  right: 0;
+}
+.services .cardd{
+  backdrop-filter: blur(10px);
+}
+
+
+.end .container{
+  background-color: #CBFC01;
+  color: black;
+}
+.end h1{
+  font-size: 3vw;
+  font-weight: bolder;
+}
+.end button{
+  color:#CBFC01;
+  background-color: #000000;
+  padding: 1vw 2vw;
+  font-size: 1vw;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
 @media screen and (max-width:500px) {
   .homePage .banner2{
     top: 40vh;
@@ -209,5 +335,70 @@ body{
   }
   .homePage .navbar span{
     font-size: 2vw;
+  }
+  .ads{
+    height: 22vw;
+
+  }
+  .ad{
+    width: 80px;
+  }
+  .ad svg{
+    scale: 0.7;
+  }
+
+
+
+  .maps .span1{
+    font-size: 3vw;
+  }
+  .maps .span2{
+    font-size: 7vw;
+  }
+  .maps .span3{
+    font-size: 2.5vw;
+  }
+  .maps .span4{
+    font-size: 7vw;
+  }
+  .maps .span5{
+    font-size: 2.5vw;
+  }
+
+
+  .services .span1{
+    font-size: 3vw;
+  }
+  .services .span2{
+    font-size: 7vw;
+  }
+  .services .span3{
+    font-size: 2.5vw;
+  }
+  .services button{
+    font-size: 3vw;
+    margin-bottom: 10vw;
+  }
+  .services .circle{
+  }
+  .services .cardd{
+    scale: 0.75;
+  }
+
+
+  .end .container{
+    background-color: #CBFC01;
+    color: black;
+  }
+  .end h1{
+    font-size: 8vw;
+    font-weight: bolder;
+  }
+  .end button{
+    color:#CBFC01;
+    background-color: #000000;
+    padding: 1vw 2vw;
+    font-size: 3vw;
+    font-weight: bold;
   }
 }
