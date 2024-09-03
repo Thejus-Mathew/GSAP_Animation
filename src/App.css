@@ -180,8 +180,8 @@ body{
 
 @media screen and (max-width:500px) {
   .homePage .banner2{
-    top: 30%;
-    height: 82%;
+    top: 33vh;
+    height: 580px;
     width: 200%;
     transform-origin: 100% 50%;
     scale: 0.4;
