@@ -1,81 +1,102 @@
-import './App.css'
-
-
-
+import { MDBCol, MDBContainer, MDBFooter, MDBIcon, MDBRow } from 'mdb-react-ui-kit';
+import './App.css';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/TextPlugin";
-import { MDBCol, MDBContainer, MDBFooter, MDBIcon, MDBRow } from 'mdb-react-ui-kit';
+import React from 'react';
 
-gsap.registerPlugin(useGSAP,TextPlugin,ScrollTrigger);
 
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
 
-  
-  useGSAP(()=>{
+
+  useGSAP(() => {
+    const mainTimeline = gsap.timeline({
+      onComplete: () => {
+        // Initialize scroll-triggered animations after the main animation
+        initializeScrollTriggers();
+        // Refresh ScrollTrigger to recalculate positions
+        ScrollTrigger.refresh();
+      }
+    });
+
+    mainTimeline
+      .from(".loadingText span", { y: 200, stagger: 0.1, opacity: 0, delay: 0.5, duration: 0.5, ease: "back(4)" })
+      .from(".loadingBun", { opacity: 0, duration: 0.1 })
+      .from(".loadingBun", { rotate: -360, duration: 2, ease: "power1.in" })
+      .to(".loadingBundle", { rotate: 360, repeat: 1, duration: 4, ease: "none" })
+      .to(".loadingText span", { y: 200, stagger: 0.1, opacity: 0, delay: 0.5, duration: 0.5, ease: "back.in(4)" }, "<")
+      .to(".loadingbundleCover", { x: "-7.969vw", duration: 4, ease: "power1.inOut" }, 5)
+      .to(".centerCircle", { scale: 3000, duration: 3, ease: "back.in(1)" }, 8)
+      .to(".loadingCircle1", { scale: 12, y: -200, duration: 6, ease: "none" }, 4)
+      .to(".loadingCircle2", { scale: 11, y: -200, duration: 6, ease: "none" }, 4.2)
+      .to(".loadingCircle3", { scale: 10, y: -200, duration: 6, ease: "none" }, 4.4)
+      .to(".loadingCircle4", { scale: 9, y: -200, duration: 6, ease: "none" }, 4.6)
+      .to(".loadingCircle5", { scale: 8, y: -200, duration: 6, ease: "none" }, 4.8)
+      .to(".loadingCircle6", { scale: 7, y: -200, duration: 6, ease: "none" }, 5)
+      .to(".landingPage", { opacity: 0, duration: 0.001 }, 10.8)
+      .set(".landingPage", { display: "none" })
+      .set(".content", { display: "block" })
+      .from(".gridLines path", { opacity: 0 })
+      .from(".navbar", { y: -100, ease: "back(3)" })
+      .from(".banner1 span", { stagger: 0.1, opacity: 0, x: -500, ease: "back(3)" })
+      .from(".ellipse", { scale: 0 })
+      .set(".demoCard", { scaleX: 6.7, scaleY: 3.8, transformOrigin: "0% 100%", rotateZ: -30.5, rotateX: 40, rotateY: 40, opacity: 0 })
+      .from(".cardd1 g", { opacity: 0, x: 500, duration: 0.5, y: -300 })
+      .fromTo(".demoCard1", { opacity: 0, x: 500, y: -300 }, { x: 0, y: 0, opacity: 1, duration: 0.5 }, "<")
+      .from(".cardd1 path", { x: 500, stagger: { amount: 0.5 }, y: -300, ease: "back" })
+      .from(".cardd2 g", { opacity: 0, x: 500, duration: 0.5, y: -300 })
+      .fromTo(".demoCard2", { opacity: 0, x: 500, y: -300 }, { x: 0, y: 0, opacity: 1, duration: 0.5 }, "<")
+      .from(".cardd2 path", { x: 500, stagger: { amount: 0.5 }, y: -300, ease: "back" });
+  });
+
+  const initializeScrollTriggers = () => {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.ads',
+        start: "bottom bottom"
+      }
+    }).from('.ads path', { stagger: { amount: 0.5 }, opacity: 0, y: 100 });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.st-1',
+        start: "bottom bottom"
+      }
+    }).from('.maps span', { stagger: { amount: 0.5 }, opacity: 0, x: -100 });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.st-2',
+        start: "bottom bottom"
+      }
+    }).from('.st-2', { opacity: 0, x: 100 });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.st-3',
+        start: "bottom bottom"
+      }
+    }).from('.services span', { stagger: { amount: 0.5 }, opacity: 0, x: -100 });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.st-5',
+        start: "bottom bottom"
+      }
+    }).from('.sCircle', { scale: 0 });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.st-5',
+        start: "bottom bottom"
+      }
+    }).from('.card2', { opacity: 0 });
 
 
-    gsap.timeline()
-      .from(".loadingText span",{y:200,stagger:0.1,opacity:0,delay:0.5,duration:0.5,ease:"back(4)"})
-      .from(".loadingBun",{opacity:0,duration:0.1})
-      .from(".loadingBun",{rotate:-360,duration:2,ease:"power1.in"})
-      .to(".loadingBundle",{rotate:360,repeat:1,duration:4,ease:"none"})
-      .to(".loadingText span",{y:200,stagger:0.1,opacity:0,delay:0.5,duration:0.5,ease:"back.in(4)"},"<")
-      .to(".loadingbundleCover",{x:"-7.969vw",duration:4,ease:"power1.inOut"},5)
-      .to(".centerCircle",{scale:3000,duration:3,ease:"back.in(1)"},8)
-      .to(".loadingCircle1",{scale:12,y:-200,duration:6,ease:"none"},4)
-      .to(".loadingCircle2",{scale:11,y:-200,duration:6,ease:"none"},4.2)
-      .to(".loadingCircle3",{scale:10,y:-200,duration:6,ease:"none"},4.4)
-      .to(".loadingCircle4",{scale:9,y:-200,duration:6,ease:"none"},4.6)
-      .to(".loadingCircle5",{scale:8,y:-200,duration:6,ease:"none"},4.8)
-      .to(".loadingCircle6",{scale:7,y:-200,duration:6,ease:"none"},5)
-      .to(".landingPage",{opacity:0,duration:0.001},10.8)
-      .set(".landingPage",{display:"none"})
-      .set(".content",{display:"block"})
-      .from(".gridLines path",{opacity:0})
-      .from(".navbar",{y:-100,ease:"back(3)"})
-      .from(".banner1 span",{stagger:0.1,opacity:0,x:-500,ease:"back(3)"})
-      .from(".ellipse",{scale:0})
-      .set(".demoCard",{scaleX:6.7,scaleY:3.8,transformOrigin:"0% 100%",rotateZ:-30.5,rotateX:40,rotateY:40,opacity:0})
-      .from(".cardd1 g",{opacity:0,x:500,duration:0.5,y:-300})
-      .fromTo(".demoCard1",{opacity:0,x:500,y:-300},{x:0,y:0,opacity:1,duration:0.5},"<")
-      .from(".cardd1 path",{x:500,stagger:{amount:0.5},y:-300,ease:"back"})
-      .from(".cardd2 g",{opacity:0,x:500,duration:0.5,y:-300})
-      .fromTo(".demoCard2",{opacity:0,x:500,y:-300},{x:0,y:0,opacity:1,duration:0.5},"<")
-      .from(".cardd2 path",{x:500,stagger:{amount:0.5},y:-300,ease:"back"})
 
-      let tl1 = gsap.timeline({scrollTrigger:{
-        trigger:'.ads',
-        start:"bottom bottom"
-      }})
-      let tl2 = gsap.timeline({scrollTrigger:{
-        trigger:'.st-1',
-        start:"bottom bottom"
-      }})
-      let tl3 = gsap.timeline({scrollTrigger:{
-        trigger:'.st-2',
-        start:"bottom bottom"
-      }})
-      let tl4 = gsap.timeline({scrollTrigger:{
-        trigger:'.st-3',
-        start:"bottom bottom"
-      }})
-      let tl5 = gsap.timeline({scrollTrigger:{
-        trigger:'.st-5',
-        start:"bottom bottom"
-      }})
-      
-      tl1.from('.ads path',{stagger:{amount:0.5},opacity:0,y:100})
-      tl2.from('.maps span',{stagger:{amount:0.5},opacity:0,x:-100})
-      tl3.from('.st-2',{opacity:0,x:100})
-      tl4.from('.services span',{stagger:{amount:0.5},opacity:0,x:-100})
-      tl5.from('.sCircle',{scale:0})
-
-
-  })
-
+  };
   
 
   return (
@@ -2826,7 +2847,7 @@ function App() {
                   <div className="col d-flex justify-content-center align-items-center position-relative st-5">
                     <div className="circle sCircle position-absolute">
                     </div>
-                    <div className="cardd position-relative">
+                    <div className="cardd card2 position-relative">
                       <svg width="474" height="307" viewBox="0 0 474 307" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g filter="url(#filter0_b_504_306)">
                         <rect width="474" height="306.277" rx="29.1692" fill="black" fill-opacity="0.7"/>

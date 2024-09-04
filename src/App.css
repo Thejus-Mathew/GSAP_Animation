@@ -84,6 +84,7 @@ body{
 
 .content{
   display: none;
+  /* visibility: hidden; */
   background-color: black;
   color: white;
   width: 99vw;
@@ -276,6 +277,7 @@ body{
   border-radius: 50%;
   background-color: #CBFC01;
   right: 0;
+  scale: 1;
 }
 .services .cardd{
   backdrop-filter: blur(10px);
