@@ -1,23 +1,22 @@
 import './App.css'
-// import ellipse from './assets/homePageEllipse.png';
 
 
 
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
 import { MDBCol, MDBContainer, MDBFooter, MDBIcon, MDBRow } from 'mdb-react-ui-kit';
 
-
-gsap.registerPlugin(useGSAP,TextPlugin);
+gsap.registerPlugin(useGSAP,TextPlugin,ScrollTrigger);
 
 
 function App() {
 
   
   useGSAP(()=>{
-    
-    
+
+
     gsap.timeline()
       .from(".loadingText span",{y:200,stagger:0.1,opacity:0,delay:0.5,duration:0.5,ease:"back(4)"})
       .from(".loadingBun",{opacity:0,duration:0.1})
@@ -46,6 +45,35 @@ function App() {
       .from(".cardd2 g",{opacity:0,x:500,duration:0.5,y:-300})
       .fromTo(".demoCard2",{opacity:0,x:500,y:-300},{x:0,y:0,opacity:1,duration:0.5},"<")
       .from(".cardd2 path",{x:500,stagger:{amount:0.5},y:-300,ease:"back"})
+
+      let tl1 = gsap.timeline({scrollTrigger:{
+        trigger:'.ads',
+        start:"bottom bottom"
+      }})
+      let tl2 = gsap.timeline({scrollTrigger:{
+        trigger:'.st-1',
+        start:"bottom bottom"
+      }})
+      let tl3 = gsap.timeline({scrollTrigger:{
+        trigger:'.st-2',
+        start:"bottom bottom"
+      }})
+      let tl4 = gsap.timeline({scrollTrigger:{
+        trigger:'.st-3',
+        start:"bottom bottom"
+      }})
+      let tl5 = gsap.timeline({scrollTrigger:{
+        trigger:'.st-5',
+        start:"bottom bottom"
+      }})
+      
+      tl1.from('.ads path',{stagger:{amount:0.5},opacity:0,y:100})
+      tl2.from('.maps span',{stagger:{amount:0.5},opacity:0,x:-100})
+      tl3.from('.st-2',{opacity:0,x:100})
+      tl4.from('.services span',{stagger:{amount:0.5},opacity:0,x:-100})
+      tl5.from('.sCircle',{scale:0})
+
+
   })
 
   
@@ -118,11 +146,10 @@ function App() {
                 <span className='span2'>The World's</span>
                 <span className='span2'>Most Modern</span>
                 <span className='span2'>Card <span style={{color:"#CBFC01"}}>Platform</span></span>
-                <span className='span3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</span>
+                <span className='span3 mp2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</span>
                 <span><button>Get Started <i className="fa-solid fa-arrow-right"></i></button></span>
               </div>
               <div className="banner2">
-                {/* <img src={ellipse} alt="" /> */}
                 <div className="ellipse"></div>
                 <div className="cardCover1 cardCover">
                   <div className="demoCard1 demoCard"></div>
@@ -247,9 +274,9 @@ function App() {
                     <span className='span2 mt-2'>users all over the</span>
                     <span className='span2 mt-2'><span style={{color:"#CBFC01"}}>world</span></span>
                     <span className='span3 mt-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</span>
-                    <div className="row mt-4">
+                    <div className="row mt-4 mapTrigger">
                       <div className="col d-flex flex-column">
-                        <span className='span4'>10<span style={{color:"#CBFC01"}}>+</span></span>
+                        <span className='span4'>10M<span style={{color:"#CBFC01"}}>+</span></span>
                         <span className='span5' style={{color:"#CBFC01"}}>User active</span>
                       </div>
                       <div className="col d-flex flex-column">
@@ -257,12 +284,12 @@ function App() {
                         <span className='span5' style={{color:"#CBFC01"}}>Country</span>
                       </div>
                       <div className="col d-flex flex-column">
-                        <span className='span4'>$50<span style={{color:"#CBFC01"}}>+</span></span>
-                        <span className='span5' style={{color:"#CBFC01"}}>Transaction</span>
+                        <span className='span4'>$50M<span style={{color:"#CBFC01"}}>+</span></span>
+                        <span className='span5 st-1' style={{color:"#CBFC01"}}>Transaction</span>
                       </div>
                     </div>
                   </div>
-                  <div className="col d-flex align-items-center">
+                  <div className="col d-flex align-items-center st-2">
                     <svg width="590" height="379" viewBox="0 0 590 379" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M289.31 201.046C290.398 201.046 291.281 200.163 291.281 199.075C291.281 197.986 290.398 197.104 289.31 197.104C288.221 197.104 287.339 197.986 287.339 199.075C287.339 200.163 288.221 201.046 289.31 201.046Z" fill="white" fill-opacity="0.7"/>
                       <path d="M297.845 196.118C298.934 196.118 299.816 195.235 299.816 194.147C299.816 193.058 298.934 192.176 297.845 192.176C296.756 192.176 295.874 193.058 295.874 194.147C295.874 195.235 296.756 196.118 297.845 196.118Z" fill="white" fill-opacity="0.7"/>
@@ -2794,10 +2821,10 @@ function App() {
                     <span className='span2 mt-4'>Real Time</span>
                     <span className='span2 mt-2'><span style={{color:"#CBFC01"}}>Transaction Report</span></span>
                     <span className='span3 mt-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</span>
-                    <span className='mt-4'><button>Get Started <i className="fa-solid fa-arrow-right"></i></button></span>
+                    <span className='mt-4 st-3'><button>Get Started <i className="fa-solid fa-arrow-right"></i></button></span>
                   </div>
-                  <div className="col d-flex justify-content-center align-items-center position-relative">
-                    <div className="circle position-absolute">
+                  <div className="col d-flex justify-content-center align-items-center position-relative st-5">
+                    <div className="circle sCircle position-absolute">
                     </div>
                     <div className="cardd position-relative">
                       <svg width="474" height="307" viewBox="0 0 474 307" fill="none" xmlns="http://www.w3.org/2000/svg">
