@@ -90,9 +90,40 @@ function App() {
     gsap.timeline({
       scrollTrigger: {
         trigger: '.st-5',
-        start: "bottom bottom"
+        start: "bottom bottom",
       }
     }).from('.card2', { opacity: 0 });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.st-5',
+        start: "bottom bottom",
+        end:'bottom center',
+        scrub:true
+      }
+    }).from('.card2 path', {stagger:0.1,x:435});
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.end',
+        start: "bottom bottom"
+      }
+    }).from('.end h1', { scale: 0 });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.end',
+        start: "bottom bottom"
+      }
+    }).from('.end button', { opacity: 0,y:100 });
+
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.footer',
+        start: "center bottom"
+      }
+    }).from('.footer span,a,h6,p', {stagger:{amount:0.5},y:500, opacity: 0});
 
 
 
@@ -2896,7 +2927,7 @@ function App() {
 
 
 
-            <MDBFooter style={{backgroundColor:"black",color:"white"}} className='text-center text-lg-start text-muted'>
+            <MDBFooter style={{backgroundColor:"black",color:"white"}} className='text-center footer text-lg-start text-muted'>
               <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom text-light border-top'>
                 <div className='me-5 d-none d-lg-block'>
                   <span>Get connected with us on social networks:</span>
